@@ -2,7 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from '@material-ui/core';
 import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
-import Login from 'views/Login';
+import Main from 'styles/elements/Main';
+import Reset from 'styles/generic/Reset';
+import Box from 'components/Box/Box';
+import Login from 'views/Login/Login';
+
 
 const Theme = responsiveFontSizes(createTheme({
   palette: {
@@ -21,7 +25,12 @@ const Theme = responsiveFontSizes(createTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={Theme}>
-      <Login />
+      <Reset />
+      <Main>
+        <Box>
+          <Login />
+        </Box>
+      </Main>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
